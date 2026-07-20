@@ -1,14 +1,34 @@
-function TaskForm() {
+import { useState } from "react"
+import { ACTIONS } from "../reducers/actions"
+
+function TaskForm({ dispatch }) {
+  const [title, setTitle] = useState("")
+
+  function handleAddTask() {
+    if (!title.trim()) return
+
+    dispatch({
+      type: ACTIONS.ADD_TASK,
+      payload: {
+        id: Date.now(),
+        title,
+        status: "todo",
+        date: new Date().toISOString.split("T") [0]
+      }
+    })
+  }
 
   return(
     <>
       <div>
         <input 
           type="text"
-          placeholder="Add Task here" 
+          placeholder="Add Task here"
+          value={title} 
+          onChange={(e) => setTitle(e.target.value) }
         />
 
-        <button>Add</button>
+        <button onClick={handleAddTask}>Add</button>
       </div>
     </>
   )
