@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <TaskForm dispatch={dispatch}/>
-      <Board />
+      <Board tasks={state.tasks}/>
     </>
   )
 }

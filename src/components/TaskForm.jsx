@@ -4,6 +4,8 @@ import { ACTIONS } from "../reducers/actions"
 function TaskForm({ dispatch }) {
   const [title, setTitle] = useState("")
 
+  const date = new Date().toISOString().split("T") [0]
+
   function handleAddTask() {
     if (!title.trim()) return
 
@@ -13,9 +15,11 @@ function TaskForm({ dispatch }) {
         id: Date.now(),
         title,
         status: "todo",
-        date: new Date().toISOString.split("T") [0]
+        date: date
       }
     })
+
+    setTitle("")
   }
 
   return(

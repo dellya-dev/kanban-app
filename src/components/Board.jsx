@@ -1,14 +1,13 @@
 import './Board.css'
+import  Column from './Column'
 
-function Board() {
+function Board({ tasks }) {
 
   return(
     <>
-      <div className="board-container">
-        <h3>Todo</h3>
-        <h3>On Progress</h3>
-        <h3>Completed</h3>
-      </div>
+      <Column tasks={tasks} status= "todo" />
+      <Column tasks={tasks} status= "doing"/>
+      <Column tasks={tasks} status= "done"/>
     </>
   )
 }
