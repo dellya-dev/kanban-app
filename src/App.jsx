@@ -11,8 +11,13 @@ function App() {
 
   return (
     <>
-      <TaskForm dispatch={dispatch}/>
-      <Board tasks={state.tasks}/>
+      <TaskForm 
+        dispatch={dispatch}
+      />
+      <Board 
+        tasks={state.tasks}
+        dispatch={dispatch}
+      />
     </>
   )
 }
