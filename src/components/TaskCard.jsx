@@ -1,6 +1,6 @@
 import { ACTIONS } from "../reducers/actions"
 
-function TaskCard({ task, dispatch }) {
+function TaskCard({ task, dispatch, handleOpenModal }) {
  
   function handleDelete() {
     dispatch({
@@ -20,6 +20,10 @@ function TaskCard({ task, dispatch }) {
         <button
           onClick={handleDelete}
         >🗑️</button>
+
+        <button
+        onClick={()=> handleOpenModal(task)}
+        >🖋️Edit</button>
       </div>
     </>
   )

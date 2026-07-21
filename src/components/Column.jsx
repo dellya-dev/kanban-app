@@ -1,6 +1,6 @@
 import TaskCard from './TaskCard'
 
-function Column({ tasks, status, dispatch }) {
+function Column({ tasks, status, dispatch, handleOpenModal }) {
 
   const filteredTasks = tasks.filter((task) => task.status === status)
 
@@ -16,6 +16,7 @@ function Column({ tasks, status, dispatch }) {
               key={task.id}
               task={task}
               dispatch={dispatch}
+              handleOpenModal={handleOpenModal}
             />
           )
         })}
