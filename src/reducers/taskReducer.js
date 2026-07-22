@@ -25,5 +25,19 @@ export function taskReducer(state, action) {
         ...state,
         tasks: state.tasks.filter((task) => task.id !== action.payload.id)
       }
+
+    case ACTIONS.EDIT_TASK:
+      return{
+        ...state,
+        tasks: state.tasks.map((task) => task.id === action.payload.id
+        ? {
+            ...task,
+            title: action.payload.title,
+            date: action.payload.date,
+            status: action.payload.status
+          }
+        : task
+        )
+      }
   }
 }

@@ -1,10 +1,23 @@
 import { useState } from "react"
+import { ACTIONS } from "../reducers/actions"
 
-function EditTaskModal({ editingTask, handleCloseModal }) {
+function EditTaskModal({ editingTask, handleCloseModal, dispatch }) {
   const [title, setTitle] = useState(editingTask.title)
   const [status, setStatus] = useState(editingTask.status)
   const [date, setDate] = useState(editingTask.date)
 
+  function handleSaveTask() {
+    dispatch({
+      type: ACTIONS.EDIT_TASK,
+      payload: {
+        id: editingTask.id,
+        title: title,
+        date: date,
+        status: status
+      }
+    })
+    handleCloseModal()
+  }
 
   return(
     <>
@@ -33,7 +46,9 @@ function EditTaskModal({ editingTask, handleCloseModal }) {
         </select>
 
         <div>
-          <button>Save</button>
+          <button
+            onClick={handleSaveTask}
+          >Save</button>
           <button
             onClick={handleCloseModal}
           >Cancel</button>

@@ -3,9 +3,6 @@ import TaskCard from './TaskCard'
 function Column({ tasks, status, dispatch, handleOpenModal }) {
 
   const filteredTasks = tasks.filter((task) => task.status === status)
-
-  console.log(tasks)
-  console.log(filteredTasks.length)
   
   return(
     <>

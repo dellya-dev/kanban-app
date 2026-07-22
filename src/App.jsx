@@ -22,6 +22,8 @@ function App() {
     setIsModalOpen(false)
   }
 
+  console.log(state.tasks)
+
   return (
     <>
       <TaskForm 
@@ -36,6 +38,7 @@ function App() {
         <EditTaskModal 
         editingTask={editingTask}
         handleCloseModal={handleCloseModal}
+        dispatch={dispatch}
       />
       }
       
