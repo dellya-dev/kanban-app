@@ -22,7 +22,6 @@ function App() {
     setIsModalOpen(false)
   }
 
-  console.log(state.tasks)
 
   return (
     <>
