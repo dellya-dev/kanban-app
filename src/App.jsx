@@ -1,9 +1,8 @@
 
-import { useReducer, useState } from 'react'
+import { useState } from 'react'
 import './App.css'
 import Board from './components/Board'
 import TaskForm from './components/TaskForm'
-import { initialState, taskReducer } from './reducers/taskReducer'
 import EditTaskModal from './components/EditTaskModal'
 
 function App() {
