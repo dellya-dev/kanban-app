@@ -1,10 +1,12 @@
 import { useState } from "react"
 import { ACTIONS } from "../reducers/actions"
+import useTask from "../context/useTask"
 
-function EditTaskModal({ editingTask, handleCloseModal, dispatch }) {
+function EditTaskModal({ editingTask, handleCloseModal }) {
   const [title, setTitle] = useState(editingTask.title)
   const [status, setStatus] = useState(editingTask.status)
   const [date, setDate] = useState(editingTask.date)
+  const { dispatch } = useTask()
 
   function handleSaveTask() {
     dispatch({

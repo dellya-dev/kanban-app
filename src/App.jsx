@@ -7,8 +7,6 @@ import { initialState, taskReducer } from './reducers/taskReducer'
 import EditTaskModal from './components/EditTaskModal'
 
 function App() {
- 
-  const [state, dispatch] = useReducer(taskReducer, initialState)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [editingTask, setEditingTask] = useState(null)
 
@@ -26,18 +24,14 @@ function App() {
   return (
     <>
       <TaskForm 
-        dispatch={dispatch}
       />
       <Board 
-        tasks={state.tasks}
-        dispatch={dispatch}
         handleOpenModal={handleOpenModal}
       />
       {isModalOpen && 
         <EditTaskModal 
         editingTask={editingTask}
         handleCloseModal={handleCloseModal}
-        dispatch={dispatch}
       />
       }
       

@@ -1,7 +1,9 @@
+import useTask from '../context/useTask'
 import './Board.css'
 import Column from './Column'
 
-function Board({ tasks, dispatch, handleOpenModal }) {
+function Board({ handleOpenModal }) {
+  const { tasks, dispatch } = useTask()
 
   return (
     <>

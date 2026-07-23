@@ -1,10 +1,16 @@
 import { useState } from "react"
 import { ACTIONS } from "../reducers/actions"
+import useTask from "../context/useTask"
 
-function TaskForm({ dispatch }) {
+
+function TaskForm() {
   const [title, setTitle] = useState("")
-
   const date = new Date().toISOString().split("T") [0]
+
+  const { dispatch } = useTask()
+
+  const value = useTask()
+  console.log(value)
 
   function handleAddTask() {
     if (!title.trim()) return

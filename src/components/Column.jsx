@@ -1,7 +1,9 @@
+import useTask from '../context/useTask'
 import TaskCard from './TaskCard'
 
-function Column({ tasks, status, dispatch, handleOpenModal }) {
+function Column({ status, handleOpenModal }) {
 
+  const { tasks, dispatch } = useTask()
   const filteredTasks = tasks.filter((task) => task.status === status)
 
   console.log(filteredTasks)

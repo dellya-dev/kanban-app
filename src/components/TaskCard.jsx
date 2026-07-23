@@ -1,6 +1,8 @@
+import useTask from "../context/useTask"
 import { ACTIONS } from "../reducers/actions"
 
-function TaskCard({ task, dispatch, handleOpenModal }) {
+function TaskCard({ task, handleOpenModal }) {
+  const { dispatch } = useTask()
  
   function handleDelete() {
     dispatch({
