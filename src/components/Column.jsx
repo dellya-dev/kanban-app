@@ -5,6 +5,7 @@ import TaskCard from './TaskCard'
 function Column({ status, handleOpenModal }) {
 
   const { tasks } = useTask()
+  
   const filteredTasks =  useMemo(
     () => tasks.filter((task) => task.status === status), [tasks, status] )
   
