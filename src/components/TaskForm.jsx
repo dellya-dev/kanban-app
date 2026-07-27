@@ -21,7 +21,8 @@ function TaskForm() {
         id: Date.now(),
         title,
         status: "todo",
-        date: date
+        date: date,
+        priority: "medium"
       }
     })
 

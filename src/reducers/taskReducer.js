@@ -8,7 +8,6 @@ export function taskReducer(state, action) {
 
   switch(action.type) {
     
-
     case ACTIONS.ADD_TASK:
       return {
         ...state,
@@ -34,7 +33,8 @@ export function taskReducer(state, action) {
             ...task,
             title: action.payload.title,
             date: action.payload.date,
-            status: action.payload.status
+            status: action.payload.status,
+            priority: action.payload.priority
           }
         : task
         )

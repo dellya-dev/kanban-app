@@ -1,0 +1,17 @@
+.task-card-container {
+  padding: 1rem;
+  border-radius: 10px;
+  width: 200px;
+}
+
+.low {
+  background-color: yellow;
+}
+
+.medium {
+  background-color: green;
+}
+
+.high {
+  background-color: red;
+}

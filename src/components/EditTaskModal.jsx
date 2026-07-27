@@ -6,6 +6,8 @@ function EditTaskModal({ editingTask, handleCloseModal }) {
   const [title, setTitle] = useState(editingTask.title)
   const [status, setStatus] = useState(editingTask.status)
   const [date, setDate] = useState(editingTask.date)
+  const [priority, setPriority] = useState(editingTask.priority)
+
   const { dispatch } = useTask()
 
   function handleSaveTask() {
@@ -15,7 +17,8 @@ function EditTaskModal({ editingTask, handleCloseModal }) {
         id: editingTask.id,
         title: title,
         date: date,
-        status: status
+        status: status,
+        priority: priority
       }
     })
     handleCloseModal()
@@ -45,6 +48,16 @@ function EditTaskModal({ editingTask, handleCloseModal }) {
           <option value="todo">Todo</option>
           <option value="doing">doing</option>
           <option value="done">Done</option>
+        </select>
+
+        <select 
+          name="priority" 
+          value={priority}
+          onChange={(e) => setPriority(e. target.value)}
+          >
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
         </select>
 
         <div>

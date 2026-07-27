@@ -1,5 +1,7 @@
 import useTask from "../context/useTask"
 import { ACTIONS } from "../reducers/actions"
+import './TaskCard.css'
+
 
 function TaskCard({ task, handleOpenModal }) {
   const { dispatch } = useTask()
@@ -14,7 +16,7 @@ function TaskCard({ task, handleOpenModal }) {
   }
   return(
     <>
-      <div>
+      <div className={`task-card-container ${task.priority}` }>
         <p>{task.title}</p>
         <p>{task.date}</p>
         <p>{task.status}</p>
