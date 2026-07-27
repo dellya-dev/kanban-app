@@ -1,7 +1,7 @@
 import './Board.css'
 import Column from './Column'
 
-function Board({ handleOpenModal, search }) {
+function Board({ handleOpenModal, search, filter }) {
 
   return (
     <>
@@ -11,6 +11,7 @@ function Board({ handleOpenModal, search }) {
           status="todo"
           handleOpenModal={handleOpenModal}
           search={search}
+          filter={filter}
         />
       </div>
 
@@ -20,6 +21,7 @@ function Board({ handleOpenModal, search }) {
         status="doing"
         handleOpenModal={handleOpenModal}
         search={search}
+        filter={filter}
       />
       </div>
       
@@ -29,6 +31,7 @@ function Board({ handleOpenModal, search }) {
         status="done"
         handleOpenModal={handleOpenModal}
         search={search}
+        filter={filter}
       />
       </div>
       
