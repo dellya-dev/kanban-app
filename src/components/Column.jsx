@@ -23,9 +23,6 @@ function Column({ status, handleOpenModal, search, filter }) {
       })
     , [tasks, status, search, filter])
 
-  console.log(filteredTasks)
-  console.log(status)
-
   return (
     <>
       <div>

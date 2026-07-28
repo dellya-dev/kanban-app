@@ -9,9 +9,6 @@ function TaskForm() {
 
   const { dispatch } = useTask()
 
-  const value = useTask()
-  console.log(value)
-
   function handleAddTask() {
     if (!title.trim()) return
 

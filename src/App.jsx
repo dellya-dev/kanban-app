@@ -7,17 +7,19 @@ import EditTaskModal from './components/EditTaskModal'
 import SearchBar from './components/SearchBar'
 import FilterBar from './components/FilterBar'
 
+
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [editingTask, setEditingTask] = useState(null)
   const [search, setSearch] = useState("")
   const [filter, setFilter] = useState("all")
 
-  const handleOpenModal = useCallback((task) => 
-    {setEditingTask(task)
-    setIsModalOpen(true)}, 
+  const handleOpenModal = useCallback((task) => {
+    setEditingTask(task)
+    setIsModalOpen(true)
+  },
     [])
-    
+
   function handleCloseModal() {
     setEditingTask(null)
     setIsModalOpen(false)
@@ -26,25 +28,25 @@ function App() {
   return (
     <>
       <TaskForm />
-      <SearchBar 
+      <SearchBar
         search={search}
         setSearch={setSearch}
       />
-      <FilterBar 
+      <FilterBar
         setFilter={setFilter}
       />
-      <Board 
+      <Board
         handleOpenModal={handleOpenModal}
         search={search}
         filter={filter}
       />
-      {isModalOpen && 
-        <EditTaskModal 
-        editingTask={editingTask}
-        handleCloseModal={handleCloseModal}
-      />
+      {isModalOpen &&
+        <EditTaskModal
+          editingTask={editingTask}
+          handleCloseModal={handleCloseModal}
+        />
       }
-      
+
     </>
   )
 }
