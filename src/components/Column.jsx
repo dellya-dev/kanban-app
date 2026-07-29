@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import useTask from '../context/useTask'
 import TaskCard from './TaskCard'
 import { useDroppable } from '@dnd-kit/core'
+import './Column.css'
 
 function Column({ status, handleOpenModal, search, filter }) {
 
@@ -32,6 +33,7 @@ function Column({ status, handleOpenModal, search, filter }) {
     <>
       <div
         ref={setNodeRef}
+        className='column'
       >
         {filteredTasks.map((task) => {
           return (

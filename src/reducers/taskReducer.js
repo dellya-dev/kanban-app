@@ -1,42 +1,55 @@
-import {ACTIONS} from "./actions"
+import { ACTIONS } from "./actions"
 
 export const initialState = {
-  tasks:[]
+  tasks: []
 }
 
 export function taskReducer(state, action) {
 
-  switch(action.type) {
-    
+  switch (action.type) {
+
     case ACTIONS.ADD_TASK:
       return {
         ...state,
         tasks: [
-          ...state.tasks, 
+          ...state.tasks,
           action.payload
         ]
       }
-      default:
-        return state
+    default:
+      return state
 
     case ACTIONS.DELETE_TASK:
-      return{
+      return {
         ...state,
         tasks: state.tasks.filter((task) => task.id !== action.payload.id)
       }
 
     case ACTIONS.EDIT_TASK:
-      return{
+      return {
         ...state,
         tasks: state.tasks.map((task) => task.id === action.payload.id
-        ? {
+          ? {
             ...task,
             title: action.payload.title,
             date: action.payload.date,
             status: action.payload.status,
             priority: action.payload.priority
-          }
-        : task
+            }
+          : task
+        )
+      }
+
+    case ACTIONS.MOVE_TASK:
+      return {
+        ...state,
+        tasks: state.tasks.map((task) =>
+          task.id === action.payload.id
+            ? {
+              ...task,
+              status: action.payload.status
+              }
+            : task
         )
       }
   }

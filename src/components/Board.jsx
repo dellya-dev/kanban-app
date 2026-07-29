@@ -8,8 +8,8 @@ function Board({ handleOpenModal, search, filter }) {
   const {dispatch} = useTask()
 
   function handleDragEnd(event) {
-
     const {active, over} = event
+    if (!over) return
 
     dispatch({
       type: ACTIONS.MOVE_TASK,
