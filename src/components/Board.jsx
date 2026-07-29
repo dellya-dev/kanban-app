@@ -1,11 +1,23 @@
+import useTask from '../context/useTask'
+import { ACTIONS } from '../reducers/actions'
 import './Board.css'
 import Column from './Column'
 import { DndContext } from '@dnd-kit/core'
 
 function Board({ handleOpenModal, search, filter }) {
+  const {dispatch} = useTask()
 
   function handleDragEnd(event) {
-    console.log(event)
+
+    const {active, over} = event
+
+    dispatch({
+      type: ACTIONS.MOVE_TASK,
+      payload: {
+        id: active.id,
+        status: over.id
+      }
+    })
   }
 
   return (
