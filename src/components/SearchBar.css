@@ -1,11 +1,15 @@
 .search-container {
-  display: flex;
-  flex-direction: row;
-  gap: 30px;
-  align-items: center;
-  position: fixed;
-  height: 70px;
-  top: 0;
-  border-bottom: solid 1px;
-  z-index: 1000;
+  margin-top: 70px;
+  margin-left: 175px;
+}
+
+.search-input {
+  margin-top: 40px;
+  width: 250px;
+  min-width: 100px;
+  padding: 8px;
+  background-color: rgb(236, 236, 232);
+  border: solid 1px rgb(212, 212, 208);
+  border-radius: 5px;
+  outline: none;
 }

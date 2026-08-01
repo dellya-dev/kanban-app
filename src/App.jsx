@@ -27,6 +27,7 @@ function App() {
 
   return (
     <>
+      <TaskForm />
       <SearchBar
         search={search}
         setSearch={setSearch}
@@ -34,7 +35,6 @@ function App() {
       <FilterBar
         setFilter={setFilter}
       />
-      <TaskForm />
       <Board
         handleOpenModal={handleOpenModal}
         search={search}

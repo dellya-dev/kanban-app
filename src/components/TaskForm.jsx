@@ -30,14 +30,19 @@ function TaskForm() {
   return(
     <>
       <div className="taskform-container">
+          <h2 className="title">KANBAN</h2>
         <input 
+          className="add-input"
           type="text"
           placeholder="Add Task here"
           value={title} 
           onChange={(e) => setTitle(e.target.value) }
         />
 
-        <button onClick={handleAddTask}>Add</button>
+        <button
+        className="add-button"
+         onClick={handleAddTask}
+        >Add</button>
       </div>
     </>
   )

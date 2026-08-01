@@ -37,18 +37,20 @@ function TaskCard({ task, handleOpenModal }) {
           {...listeners}
           {...attributes}
         >
-          ☰
+          ☰ 
         </div>
-        <p>{task.title}</p>
+        <h3>{task.title}</h3>
         <p>{task.date}</p>
         <p>{task.status}</p>
 
         <button
+          className="delete-button"
           onClick={handleDelete}
-        >🗑️</button>
+        >🗑️Delete</button>
 
         <button
-        onClick={()=> handleOpenModal(task)}
+          className="edit-button"
+          onClick={()=> handleOpenModal(task)}
         >🖋️Edit</button>
       </div>
     </>

@@ -1,5 +1,37 @@
-.taskform-container{
-  margin-top: 70px;
-  background-color: rgb(89, 0, 255);
-  margin-left: 100px;
+.taskform-container {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  
+  position: fixed;
+  height: 70px;
+  top: 0;
+  border-bottom: solid 1px rgb(212, 212, 208);
+  z-index: 1000;
+  background-color: white;
+  width: 100vw;
+}
+
+.title {
+  margin-left: 50px;
+  margin-right: 150px;
+}
+
+.add-input {
+  width: 500px;
+  min-width: 200px;
+  padding: 8px;
+  background-color: rgb(236, 236, 232);
+  border: solid 1px rgb(212, 212, 208);
+  border-radius: 2px;
+  outline: none;
+}
+
+.add-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: green;
+  color: white;
 }

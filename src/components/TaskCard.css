@@ -3,16 +3,22 @@
   border-radius: 10px;
   width: 200px;
   height: 200px;
+  margin-top: 30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
 }
 
 .low {
   background-color: yellow;
+  color: black;
 }
 
 .medium {
   background-color: green;
+  color: white;
 }
 
 .high {
   background-color: red;
+  color: white;
 }

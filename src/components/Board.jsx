@@ -24,8 +24,8 @@ function Board({ handleOpenModal, search, filter }) {
     <>
       <DndContext onDragEnd={handleDragEnd}>
         <div  className='board-container'>
-          <div>
-            <h3>Todo</h3>
+          <div className='todo-container'>
+            <h3 className='todo'>📝Todo</h3>
             <Column
               status="todo"
               handleOpenModal={handleOpenModal}
@@ -34,8 +34,8 @@ function Board({ handleOpenModal, search, filter }) {
             />
           </div>
 
-          <div>
-            <h3>Doing</h3>
+          <div className='doing-container'>
+            <h3 className='doing'>📝Doing</h3>
             <Column
               status="doing"
               handleOpenModal={handleOpenModal}
@@ -44,8 +44,8 @@ function Board({ handleOpenModal, search, filter }) {
             />
           </div>
 
-          <div>
-            <h3>Done</h3>
+          <div className='done-container'>
+            <h3 className='done'>📝Done</h3>
             <Column
               status="done"
               handleOpenModal={handleOpenModal}

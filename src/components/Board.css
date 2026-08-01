@@ -1,9 +1,23 @@
 .board-container{
   display: flex;
   flex-direction: row;
-  gap: 40px;
+  gap: 80px;
   min-height: 300px;
   min-width: 300px;
-  background-color: aqua;
-  margin-left: 100px;
+  margin-left: 175px;
+  align-items: center;
+}
+
+.todo-container, 
+.doing-container,
+.done-container {
+  background-color: rgb(196, 196, 193);
+  border-radius: 7px;
+  margin-top: 30px;
+}
+
+.todo,
+.doing,
+.done {
+  margin-left: 7px;
 }
