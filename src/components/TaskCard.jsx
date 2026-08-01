@@ -6,7 +6,7 @@ import './TaskCard.css'
 
 function TaskCard({ task, handleOpenModal }) {
   const { dispatch } = useTask()
- 
+
   function handleDelete() {
     dispatch({
       type: ACTIONS.DELETE_TASK,
@@ -25,33 +25,35 @@ function TaskCard({ task, handleOpenModal }) {
     id: task.id,
   })
 
-  return(
+  return (
     <>
-      <div 
+      <div
         className={`task-card-container ${task.priority}`}
         ref={setNodeRef}
-        style={{transform}}
+        style={{ transform }}
       >
         <div
           className="drag-hanlde"
           {...listeners}
           {...attributes}
         >
-          ☰ 
+          ☰
         </div>
         <h3>{task.title}</h3>
         <p>{task.date}</p>
         <p>{task.status}</p>
 
-        <button
-          className="delete-button"
-          onClick={handleDelete}
-        >🗑️Delete</button>
+        <div className="delete-edit-button-container">
+          <button
+            className="delete-button"
+            onClick={handleDelete}
+          >🗑️Delete</button>
 
-        <button
-          className="edit-button"
-          onClick={()=> handleOpenModal(task)}
-        >🖋️Edit</button>
+          <button
+            className="edit-button"
+            onClick={() => handleOpenModal(task)}
+          >🖋️Edit</button>
+        </div>
       </div>
     </>
   )

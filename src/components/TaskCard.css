@@ -2,10 +2,13 @@
   padding: 1rem;
   border-radius: 10px;
   width: 200px;
-  height: 200px;
+  height: 180px;
   margin-top: 30px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
 
+.task-card-container:hover{
+  transform: scale(1.02);
 }
 
 .low {
@@ -21,4 +24,28 @@
 .high {
   background-color: red;
   color: white;
+}
+
+.delete-edit-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.delete-button,
+.edit-button {
+  padding: 7px 12px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+}
+
+.delete-button {
+  background-color: rgb(221, 35, 35);
+}
+
+.edit-button {
+  background-color: rgb(77, 153, 77);
 }

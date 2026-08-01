@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { ACTIONS } from "../reducers/actions"
 import useTask from "../context/useTask"
+import './EditTaskModal.css'
 
 function EditTaskModal({ editingTask, handleCloseModal }) {
   const [title, setTitle] = useState(editingTask.title)
@@ -24,54 +25,74 @@ function EditTaskModal({ editingTask, handleCloseModal }) {
     handleCloseModal()
   }
 
-  return(
+  console.log("SAVE CLICKED")
+  console.log("CLOSE CLICKED")
+  console.log("CANCEL CLICKED")
+
+  return (
     <>
-      <div>
-        <h3>Edit Task</h3>
-        <input 
-          type="text"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
+      <div 
+        className="overplay"
+        onClick={handleCloseModal}
+      >
+        <div 
+          className="modal-container"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <h3>Edit Task</h3>
+          <input
+            className="edit-title"
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
 
-        <input 
-          type="date" 
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-        />
+          <input
+            className="edit-date"
+            type="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+          />
 
-        <select 
-          name="status"
-          value={status}
-          onChange={(e) => setStatus(e.target.value)}
+          <select
+            className="edit-status"
+            name="status"
+            value={status}
+            onChange={(e) => setStatus(e.target.value)}
           >
-          <option value="todo">Todo</option>
-          <option value="doing">doing</option>
-          <option value="done">Done</option>
-        </select>
+            <option value="todo">Todo</option>
+            <option value="doing">doing</option>
+            <option value="done">Done</option>
+          </select>
 
-        <select 
-          name="priority" 
-          value={priority}
-          onChange={(e) => setPriority(e. target.value)}
+          <select
+            className="edit-priority"
+            name="priority"
+            value={priority}
+            onChange={(e) => setPriority(e.target.value)}
           >
-          <option value="low">Low</option>
-          <option value="medium">Medium</option>
-          <option value="high">High</option>
-        </select>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
 
-        <div>
-          <button
-            onClick={handleSaveTask}
-          >Save</button>
-          <button
-            onClick={handleCloseModal}
-          >Cancel</button>
-          <button
-            onClick={handleCloseModal}
-          >Close</button>
+          <div className="button-container">
+            <button
+              className="save-button"
+              onClick={handleSaveTask}
+            >Save</button>
+            <button
+              className="cancel-button"
+              onClick={handleCloseModal}
+            >Cancel</button>
+            <button
+            className="close-button"
+              onClick={handleCloseModal}
+            >Close</button>
+          </div>
         </div>
       </div>
+
     </>
   )
 }
