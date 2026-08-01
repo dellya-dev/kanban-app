@@ -1,5 +1,9 @@
 .board-container{
   display: flex;
   flex-direction: row;
-  gap: 30px;
+  gap: 40px;
+  min-height: 300px;
+  min-width: 300px;
+  background-color: aqua;
+  margin-left: 100px;
 }

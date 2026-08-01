@@ -12,22 +12,22 @@ function Column({ status, handleOpenModal, search, filter }) {
     () => tasks
       .filter((task) => task.status === status)
       .filter((task) => task.title.toLowerCase().includes(search.toLowerCase()))
-      .filter((task) =>{
-        if(filter === "low") {
+      .filter((task) => {
+        if (filter === "low") {
           return task.priority === "low"
         } else if (filter === "medium") {
           return task.priority === "medium"
         } else if (filter === "high") {
-          return  task.priority === "high"
+          return task.priority === "high"
         } else {
           return "all"
         }
       })
     , [tasks, status, search, filter])
 
-    const {setNodeRef} = useDroppable({
-      id: status
-    })
+  const { setNodeRef } = useDroppable({
+    id: status
+  })
 
   return (
     <>
@@ -44,6 +44,9 @@ function Column({ status, handleOpenModal, search, filter }) {
             />
           )
         })}
+        {filteredTasks.length === 0 && status === "todo" && <p>No tasks to do</p>}
+        {filteredTasks.length === 0 && status === "doing" && <p>Nothing in progress.</p>}
+        {filteredTasks.length === 0 && status === "done" && <p>No completed tasks yet.</p>}
       </div>
     </>
   )

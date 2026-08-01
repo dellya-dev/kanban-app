@@ -5,10 +5,10 @@ import Column from './Column'
 import { DndContext } from '@dnd-kit/core'
 
 function Board({ handleOpenModal, search, filter }) {
-  const {dispatch} = useTask()
+  const { dispatch } = useTask()
 
   function handleDragEnd(event) {
-    const {active, over} = event
+    const { active, over } = event
     if (!over) return
 
     dispatch({
@@ -23,35 +23,38 @@ function Board({ handleOpenModal, search, filter }) {
   return (
     <>
       <DndContext onDragEnd={handleDragEnd}>
-        <div>
-          <h3>Todo</h3>
-          <Column
-            status="todo"
-            handleOpenModal={handleOpenModal}
-            search={search}
-            filter={filter}
-          />
+        <div  className='board-container'>
+          <div>
+            <h3>Todo</h3>
+            <Column
+              status="todo"
+              handleOpenModal={handleOpenModal}
+              search={search}
+              filter={filter}
+            />
+          </div>
+
+          <div>
+            <h3>Doing</h3>
+            <Column
+              status="doing"
+              handleOpenModal={handleOpenModal}
+              search={search}
+              filter={filter}
+            />
+          </div>
+
+          <div>
+            <h3>Done</h3>
+            <Column
+              status="done"
+              handleOpenModal={handleOpenModal}
+              search={search}
+              filter={filter}
+            />
+          </div>
         </div>
 
-        <div>
-          <h3>Doing</h3>
-          <Column
-            status="doing"
-            handleOpenModal={handleOpenModal}
-            search={search}
-            filter={filter}
-          />
-        </div>
-
-        <div>
-          <h3>Done</h3>
-          <Column
-            status="done"
-            handleOpenModal={handleOpenModal}
-            search={search}
-            filter={filter}
-          />
-        </div>
       </DndContext>
     </>
   )

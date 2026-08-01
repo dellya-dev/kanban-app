@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { ACTIONS } from "../reducers/actions"
 import useTask from "../context/useTask"
+import './TaskForm.css'
 
 
 function TaskForm() {
@@ -28,7 +29,7 @@ function TaskForm() {
 
   return(
     <>
-      <div>
+      <div className="taskform-container">
         <input 
           type="text"
           placeholder="Add Task here"

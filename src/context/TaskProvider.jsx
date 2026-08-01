@@ -20,8 +20,7 @@ function TaskProvider( {children} ) {
     useEffect(() => {
       localStorage.setItem("tasks", JSON.stringify(state))
     }, [state])
-
-
+    
   return(
     <TaskContext.Provider 
       value={{
