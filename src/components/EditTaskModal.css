@@ -8,14 +8,55 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgb(236, 236, 232);
+  background-color: rgb(255, 255, 255);
   padding: 20px;
   width: 300px;
-  height: 250px;
+  height: 300px;
   z-index: 2000;
   display: flex;
   flex-direction: column;
   border-radius: 8px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   gap: 15px;
+  border: solid 1px rgb(212, 212, 208);
+}
+
+.edit-title,
+.edit-date,
+.edit-status,
+.edit-priority {
+  padding: 8px;
+  background-color: rgb(236, 236, 232);
+  border: solid 1px rgb(212, 212, 208);
+  border-radius: 6px;
+  outline: none;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.save-button,
+.cancel-button,
+.close-button {
+  padding: 7px 12px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+}
+
+.save-button {
+  background-color: #10B981;
+}
+
+.cancel-button {
+  background-color:  #f8a232;
+}
+
+.close-button {
+  background-color: red;
 }

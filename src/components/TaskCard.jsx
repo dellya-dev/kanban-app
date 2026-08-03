@@ -28,17 +28,26 @@ function TaskCard({ task, handleOpenModal }) {
   return (
     <>
       <div
-        className={`task-card-container ${task.priority}`}
+        className="task-card-container"
         ref={setNodeRef}
         style={{ transform }}
       >
-        <div
-          className="drag-hanlde"
-          {...listeners}
-          {...attributes}
-        >
-          ☰
+        <div className="drag-handle-priority-container">
+          <div
+            className="drag-handle"
+            data-tooltip="Drag"
+            {...listeners}
+            {...attributes}
+          >
+            ⠿
+          </div>
+
+          <div 
+            className={`priority-icon  ${task.priority}`}
+          >▫️</div>
         </div>
+
+
         <h3>{task.title}</h3>
         <p>{task.date}</p>
         <p>{task.status}</p>
