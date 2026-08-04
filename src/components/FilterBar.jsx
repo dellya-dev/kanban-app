@@ -24,6 +24,7 @@ function FilterBar({ setFilter }) {
           onClick={() => setFilter("high")}
         >High</button>
       </div>
+      
       <div>
         <div className="mobile-menu">
           <button

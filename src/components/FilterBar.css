@@ -73,10 +73,10 @@
 
   .mobile-dropdown {
     position: absolute;
-    top: 45px;
+    top: 55px;
     left: 0;
     width: 230px;
-    padding: 10px;
+    padding: 6px;
     background: white;
     border: 1px solid #ddd;
     border-radius: 8px;
