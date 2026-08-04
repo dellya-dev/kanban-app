@@ -1,4 +1,4 @@
-.filter-container{
+.filter-container {
   position: fixed;
   left: 0;
   top: 70px;
@@ -24,9 +24,9 @@
 }
 
 .all-button {
-   margin-top: 40px;
-   background-color: rgb(196, 196, 193);
-   color: black;
+  background-color: rgb(196, 196, 193);
+  color: black;
+  margin-top: 40px;
 }
 
 .low-button {
@@ -40,4 +40,75 @@
 
 .high-button {
   background-color: red;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .filter-container {
+    display: none;
+  }
+
+  .title {
+    margin-left: 20px;
+  }
+
+  .mobile-menu {
+    display: block;
+    position: fixed;
+    top: 20px;
+    left: 5px;
+    z-index: 1000;
+  }
+
+  .mobile-menu-icon {
+    background-color: #10B981;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    color: white;
+  }
+
+  .mobile-dropdown {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 230px;
+    padding: 10px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: flex;
+    gap: 6px;
+  }
+
+  .all-button-mobile,
+  .low-button-mobile,
+  .medium-button-mobile,
+  .high-button-mobile {
+    padding: 7px 12px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+  }
+
+  .all-button-mobile {
+    background-color: rgb(196, 196, 193);
+    color: black;
+  }
+
+  .low-button-mobile {
+    background-color: yellow;
+    color: black;
+  }
+
+  .medium-button-mobile {
+    background-color: #10B981;
+  }
+
+  .high-button-mobile {
+    background-color: red;
+  }
 }

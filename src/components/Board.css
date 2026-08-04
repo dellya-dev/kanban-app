@@ -21,3 +21,17 @@
 .done {
   margin-left: 7px;
 }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .board-container {
+    gap: 10px;
+  }
+  }
+
+@media (max-width: 768px) {
+  .board-container {
+    flex-direction: column;
+    margin-left: 0;
+  }
+}
+

@@ -3,7 +3,6 @@
   flex-direction: row;
   gap: 5px;
   align-items: center;
-  
   position: fixed;
   height: 70px;
   top: 0;
@@ -34,4 +33,18 @@
   border-radius: 5px;
   background-color: #10B981;
   color: white;
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .taskform-container {
+    justify-content: space-evenly;
+  }
+  .title {
+    margin-left: 10px;
+    margin-right: 20px;
+  }
+  .add-input {
+    width: 200px;
+  }
 }

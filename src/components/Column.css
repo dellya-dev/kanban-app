@@ -7,3 +7,9 @@
   flex-direction: column;
   border-radius: 7px;
 }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .column {
+    width: 250px;
+  }
+}
